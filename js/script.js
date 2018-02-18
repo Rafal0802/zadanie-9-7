@@ -38,7 +38,6 @@ var gameState = 'notStarted',  //started // ended
     case 'ended':
         newGameBtn.innerText = 'Play again';
         endResult.style.display = 'block';
-      
     case 'notStarted':
     default:
         newGameElem.style.display = 'block';
