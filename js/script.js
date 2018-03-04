@@ -8,9 +8,9 @@ var pickRock = document.getElementById('js-playerPick_rock'),
      pickPaper = document.getElementById('js-playerPick_paper'),
      pickScissors = document.getElementById('js-playerPick_scissors');
 
-pickRock.addEventListener('click', function() { playerPick('rock') });
-pickPaper.addEventListener('click', function() { playerPick('paper') });
-pickScissors.addEventListener('click', function() { playerPick('scissors') });
+pickRock.addEventListener('click', function() { playerPick('rock'); });
+pickPaper.addEventListener('click', function() { playerPick('paper'); });
+pickScissors.addEventListener('click', function() { playerPick('scissors'); });
 
 var gameState = 'notStarted',  //started // ended
     player = {
@@ -38,7 +38,14 @@ var gameState = 'notStarted',  //started // ended
     case 'ended':
         newGameBtn.innerText = 'Play again';
         endResult.style.display = 'block';
+        playerPickElem.innerText = 'Player selection';
+        computerPickElem.innerText = 'Computer selection';
+        playerResultElem.innerText = '';
+        computerResultElem.innerText = '';
+
+        /* falls through */
     case 'notStarted':
+        /* falls through */
     default:
         newGameElem.style.display = 'block';
         pickElem.style.display = 'none';
